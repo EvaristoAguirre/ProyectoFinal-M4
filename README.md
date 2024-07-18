@@ -1,38 +1,40 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Proyecto final - M4
+## Especialización Backend - Henry Bootcamp
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Objetivo General
+Creación de una aplicación Backend que opere bajo el protocolo de Cliente - Servidor brindando los microservicios necesarios para una Aplicación de tipo E - Commerce, entendiendo por éstos, por ejemplo, la gestión del stock de los productos, el procesamiento de transacciones de compra y la realización de las mismas. 
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### Descripción general
+El desarrollo de la aplicación Backend se realizó sobre la tecnología de [Node JS](https://nodejs.org/en) y principalmente con el Framework de [Nest JS](https://nestjs.com/). Para la gestión de datos se utilizó [PostgreSQL](https://www.postgresql.org/) y como implementación de ORM (Object - Relational Mapping) se utilizó [TypeORM](https://typeorm.io/) por sus ventajas. 
 
-## Description
+## Uso de la aplicación
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### Requisitos previos
 
-## Installation
+- Node JS (versión 14 ó superior)
+- npm (versión 6 ó superior)
+
+### Instalación
+Sigue estos pasos para clonar el repositorio e instalar las dependencias necesarias: 
+
+1 - Clonar el repositorio:
+
+ ```bash
+$ git clone https://github.com/pi-rym/PM4BE-EvaristoAguirre
+$ cd ecommerce-evaristo-aguirre
+```
+
+2- Instala las dependencias del proyecto: 
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+### Comandos útiles
+
+### Desarrollo
+
+- **Iniciar el servidor en modo desarrollo:**
 
 ```bash
 # development
@@ -40,34 +42,104 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
+```
+- **Construir el proyecto:**
 
+```bash
+$ npm run build
+```
+
+### Producción
+
+- **Construir el proyecto para producción:**
+
+```bash
+# production mode
+$ npm run build
+```
+- **Iniciar el servidor en modo producción:**
+
+```bash
 # production mode
 $ npm run start:prod
 ```
 
-## Test
+### Migraciones
+
+- **Crear una nueva migración:**
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ npm run migration:create --name NombreDeLaMigracion
 ```
 
-## Support
+- **Generar una nueva migración:**
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+$ npm run migration:generate --name NombreDeLaMigracion
+```
 
-## Stay in touch
+- **Ejecutar las migraciones pendientes:**
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+$ npm run migration:run
+```
 
-## License
+- **Revertir la última migración ejecutada:**
 
-Nest is [MIT licensed](LICENSE).
+```bash
+$ npm run:migration:revert
+```
+
+- **Mostrar el historial de migraciones ejecutadas:**
+
+```bash
+$ npm run:migration:show
+```
+## Configuración
+
+Configurar las variables de entorno necesarias para el funcionamiento del proyecto según la siguiente nómina: 
+
+```env
+# Ejemplo de variables de entorno
+
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USER=ejemplo_User
+DATABASE_PASSWORD=ejemplo_Pass
+DATABASE_NAME=ejemplo_Name
+
+CLOUDINARY_CLOUD-NAME = ejemplo_Nube
+CLOUDINARY_API_KEY = 11112222333344445555
+CLOUDINARY_API_SECRET = ejemplo_Clave
+
+JWT_SECRET= ejemplo_Secreto
+```
+
+## Documentación - Open API
+Para la generación de la documentación se utilizó una [Open API](https://swagger.io/tools/swagger-ui/), ex Swagger. Permitiendo interactuar con las rutas, los esquemas y ver las respuestas a los distintos tipos de peticiones (GET, PUT, POST y DELETE) respectivamente.
+
+```bash
+# documentación de rutas y entidades
+http://localhost:3000/api#/
+```
+
+
+## Dependencias utilizadas
+
+- Bcrypt
+- Multer
+- NestJS CLI
+- PDF Make
+- Cloudinary
+- Class - transformer / class - validator
+- Swagger
+
+
+## Contacto
+
+- Autor - [Evaristo Aguirre](https://github.com/EvaristoAguirre)
+- LinkedIn - [/EvaristoAguirre](https://www.linkedin.com/in/evaristo-aguirre/)
+
+## Licencia
+
+[Creative Commons CC](https://es.wikipedia.org/wiki/Licencias_Creative_Commons).
